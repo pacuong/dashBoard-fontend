@@ -37,7 +37,7 @@ const Dashboard1 = () => {
             <CryptoStatistics />
           </div>
           <div className="pt-10 w-full">
-            <QuickTransfer/>
+            <QuickTransfer />
           </div>
         </div>
       </div>
