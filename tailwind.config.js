@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-import { colors } from './src/themes/Colors'
-import { screens } from './src/themes/screens'
-import { fontSize } from './src/themes/fontSize.ts'
-import {fontFamily} from './src/themes/fontFamily.ts'
-import { spacing } from './src/themes/spacing.ts'
-export default {
+const { colors } = require("./src/themes/colors");
+const { screens } = require("./src/themes/screens");
+const { fontSize } = require("./src/themes/fontSize");
+const { fontFamily } = require("./src/themes/fontFamily");
+const { spacing } = require("./src/themes/spacing");
+
+module.exports = {
   content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     spacing,
