@@ -1,4 +1,4 @@
-import type { MantineProvider, MantineThemeOverride } from "@mantine/core";
+import { MantineProvider, type MantineThemeOverride } from "@mantine/core";
 
 
 
