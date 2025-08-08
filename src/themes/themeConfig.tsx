@@ -1,4 +1,5 @@
-import { MantineProvider, MantineThemeOverride } from "@mantine/core";
+import type { MantineProvider, MantineThemeOverride } from "@mantine/core";
+
 
 
 const fontFamily = 'Segoe UI, sans-serif';
