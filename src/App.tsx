@@ -4,6 +4,7 @@ import ResgisterPage from "./pages/RegisterPage";
 import Dashboard1 from "./pages/dashboard1";
 import RequireAuth from "./routers/RequireAuth";
 import RedirectIfAuth from "./routers/RedirectIfAuth";
+import ExcelPage from "./pages/ExcelPage";
 
 const AppLayout = () => {
   return (
@@ -11,6 +12,7 @@ const AppLayout = () => {
       {/* ✅ Các route cần đăng nhập */}
       <Route element={<RequireAuth />}>
         <Route path="/" element={<Dashboard1 />} />
+        <Route path="/excel" element={<ExcelPage />} />
       </Route>
 
       {/* ✅ Các route công khai – nếu đã đăng nhập thì redirect */}

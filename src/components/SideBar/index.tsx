@@ -8,6 +8,7 @@ import {
   Settings,
   FileText,
   Files,
+  FileSpreadsheet,
 } from "lucide-react";
 import NavItem from "../Nav";
 import KriptonLogo from "../KriptonLogo";
@@ -27,7 +28,17 @@ const Sidebar = ({ isSidebarOpen }: SidebarProps) => {
     { icon: Heart, label: "Plugins" },
     { icon: Settings, label: "Widget" },
     { icon: FileText, label: "Forms" },
-    { icon: Files, label: "Pages" },
+    {
+      icon: Files,
+      label: "Pages",
+      children: [
+        {
+          label: "Quản lý Excel",
+          path: "/excel",
+          icon: FileSpreadsheet,
+        },
+      ],
+    },
   ];
 
   return (
@@ -59,6 +70,7 @@ const Sidebar = ({ isSidebarOpen }: SidebarProps) => {
             icon={item.icon}
             label={item.label}
             isSidebarOpen={isSidebarOpen}
+            children={item.children}
           />
         ))}
       </nav>
