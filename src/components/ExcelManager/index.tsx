@@ -6,6 +6,7 @@ import {
   Check,
   AlertCircle,
 } from "lucide-react";
+import { API_BASE_URL } from "../../lib/api";
 
 const ExcelManager = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -29,7 +30,7 @@ const ExcelManager = () => {
     setIsLoading(true);
     setMessage("");
     try {
-      const res = await fetch("http://localhost:8000/import-excel", {
+      const res = await fetch(`${API_BASE_URL}/import-excel`, {
         method: "POST",
         body: formData,
       });
@@ -49,7 +50,7 @@ const ExcelManager = () => {
     setIsLoading(true);
     setMessage("");
     try {
-      const res = await fetch("http://localhost:8000/export-excel");
+      const res = await fetch(`${API_BASE_URL}/export-excel`);
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -203,7 +204,9 @@ const ExcelManager = () => {
             <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Download className="w-6 h-6 text-white" />
             </div>
-            <h3 className="font-semibold text-black-100 mb-2">Export Dễ Dàng</h3>
+            <h3 className="font-semibold text-black-100 mb-2">
+              Export Dễ Dàng
+            </h3>
             <p className="text-sm text-gray-100">
               Xuất dữ liệu ra file Excel với một click
             </p>
