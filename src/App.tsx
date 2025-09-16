@@ -19,6 +19,22 @@ const AppLayout = () => {
       <Route element={<RedirectIfAuth />}>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<ResgisterPage />} />
+
+        const queryClient = new queryClient {
+          defaultOptions : {
+            queries: {
+              staleTime: Infinty,
+            }
+          }
+        }
+        await queryClient.prefetchQuery({queryKey: ['post'], queryFn: fetchPosts})
+
+        try {
+          const data = await queryClient.pretchQuery({ queryKey, queryFn, staleTime:1000})
+        } catch (error) {
+          console.log(error)
+        }
+
       </Route>
     </Routes>
   );

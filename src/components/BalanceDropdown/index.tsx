@@ -21,14 +21,12 @@ const BalanceDropdown: React.FC<BalanceDropdownProps> = ({ ethBalance, isOpen, o
     </button>
 
     {isOpen && (
-      <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border z-10">
-        <div className="p-3 border-b">
-          <div className="font-medium text-gray-900">345,455 ETH</div>
-          <div className="text-sm text-gray-500">Available</div>
+      <div className="absolute right-0 mt-2 w-32 bg-white-100 rounded-lg shadow-lg  z-10">
+        <div className="p-3">
+          <div className="font-medium text-gray-50">345,455 ETH</div>
         </div>
-        <div className="">
-          <div className="font-medium text-gray-900">789,123 ETH</div>
-          <div className="text-sm text-gray-500">Staked</div>
+        <div className="p-3">
+          <div className="font-medium text-gray-50">789,123 ETH</div>
         </div>
       </div>
     )}

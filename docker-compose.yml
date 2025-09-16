@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  fe-dashboard:
+    image: pacuong/fe-dashboard:latest
+    container_name: fe-dashboard
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
