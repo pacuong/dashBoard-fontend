@@ -1,0 +1,21 @@
+# Thư mục build và phụ thuộc
+node_modules
+dist
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# CI/CD
+.github
+
+# IDE/editor
+.vscode
+.idea
+*.swp
+*.swo
