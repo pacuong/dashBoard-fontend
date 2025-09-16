@@ -10,6 +10,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+# Stage 2: Serve với Nginx
+FROM nginx:stable-alpine
+WORKDIR /usr/share/nginx/html
 
 # Xóa file mặc định
 RUN rm -rf ./*
@@ -17,6 +20,8 @@ RUN rm -rf ./*
 # Copy build từ stage build
 COPY --from=build /app/dist .
 
+# Copy nginx.conf để hỗ trợ React Router SPA
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
