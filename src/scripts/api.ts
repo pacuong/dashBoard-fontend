@@ -2,7 +2,7 @@
 import axios from "axios";
 import { removeToken, getToken, saveToken } from "../utils/auth";
 
-export const BACKEND_API = "https://backend-zma.up.railway.app";
+export const BACKEND_API = "https:backend-zalo.mhoa.id.vn";
 
 const api = axios.create({
   baseURL: BACKEND_API,
