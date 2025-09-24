@@ -6,10 +6,9 @@ export const BACKEND_API = "https://backend-zalo.mhoa.id.vn";
 
 const api = axios.create({
   baseURL: BACKEND_API,
-  withCredentials: true, // gửi cookie refresh_token
+  withCredentials: true, 
 });
 
-// ✅ Request Interceptor: tự gắn access token
 api.interceptors.request.use((config) => {
   const token = getToken();
   if (token) {
