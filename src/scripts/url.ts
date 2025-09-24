@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://backend-zalo.mhoa.id.vn';
+export const API_BASE_URL = 'https:backend-zalo.mhoa.id.vn';
