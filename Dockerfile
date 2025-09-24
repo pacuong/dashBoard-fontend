@@ -23,5 +23,5 @@ COPY --from=build /app/dist .
 # Copy nginx.conf để hỗ trợ React Router SPA
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
