@@ -32,10 +32,11 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            mkdir -p /root/app && cd /root/app
+            mkdir -p /home/pacuong/projects/frontend-deploy
+            cd /home/pacuong/projects/frontend-deploy
             echo "${{ secrets.DOCKER_COMPOSE_FILE }}" > docker-compose.yml
             docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
-            docker compose pull
-            docker compose up -d
+            docker-compose pull
+            docker-compose up -d
             docker image prune -f
-            docker compose ps
+            docker-compose ps
